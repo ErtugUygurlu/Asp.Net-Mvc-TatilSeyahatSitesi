@@ -1,7 +1,6 @@
-﻿@using TravelTripProje.Models.Sınıflar
-@model List<Blog>
+﻿@model TravelTripProje.Models.Sınıflar.BlogYorum
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "BlogDetay";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
 }
 
@@ -12,7 +11,9 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
+<html>
 <head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
     <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,47 +25,55 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
     <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+   
 
 </head>
 <body>
     <!---header---->
     <div class="header">
-        <div class="container">
-
-            <!---start-top-nav---->
-            <div class="clearfix"></div>
-            <script>
-                $("span.menu").click(function () {
-                    $(".top-menu ul").slideToggle("slow", function () {
-                    });
-                });
-            </script>
-            <!---//End-top-nav---->
-        </div>
+      
     </div>
     <!--/header-->
     <div class="single">
         <div class="container">
             <div class="col-md-8 single-main">
-                @foreach (var w in Model)
-                {
-                    <div class="single-grid">
+                <div class="single-grid">
+                    @foreach (var w in Model.Deger1)
+                    {
                         <img src="@w.BlogImage" alt="" style="margin-bottom:20px" />
-                        <a href="/Blog/BlogDetay/@w.ID">@w.Baslik</a>
+                        <h2>@w.Baslik</h2>
                         <p>
                             @w.Aciklama
                         </p>
-                    </div>
-                    <br /><br />
-                }
+                    }
 
 
-                <div style="margin-bottom:30px">deneme</div>
+                </div>
+                <ul class="comment-list">
+                    <li>
+                        <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
+                        <div class="desc">
+                            <p>Ertuğ Uygurlu: yorum</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                </ul>
+                <div class="content-form">
+                    <h3>Bir Yorum Yapın</h3>
+                    <form>
+                        <input type="text" placeholder="Kullanıcı Adı" required />
+                        <input type="text" placeholder="Mail Adresi" required />
+                        <textarea placeholder="Yorum"></textarea>
+                        <input type="submit" value="Gönder" />
+                    </form>
+                </div>
             </div>
 
             <div class="col-md-4 side-content">
                 <div class="recent">
-                    <h3>Son Yazılar</h3>
+                    <h3>RECENT POSTS</h3>
                     <ul>
                         <li><a href="#">Aliquam tincidunt mauris</a></li>
                         <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
@@ -84,7 +93,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="clearfix"></div>
         </div>
     </div>
-</body>
-
-
+    </body>
+</html>
+  
 
