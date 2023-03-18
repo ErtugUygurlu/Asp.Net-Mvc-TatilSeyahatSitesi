@@ -1,5 +1,4 @@
-﻿@using TravelTripProje.Models.Sınıflar
-@model List<Blog>
+﻿@model TravelTripProje.Models.Sınıflar.BlogYorum
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -46,7 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="single">
         <div class="container">
             <div class="col-md-8 single-main">
-                @foreach (var w in Model)
+                @foreach (var w in Model.Deger1)
                 {
                     <div class="single-grid">
                         <img src="@w.BlogImage" alt="" style="margin-bottom:20px" />
@@ -65,12 +64,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="col-md-4 side-content">
                 <div class="recent">
                     <h3>Son Yazılar</h3>
-                    <ul>
-                        <li><a href="#">Aliquam tincidunt mauris</a></li>
-                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-                        <li><a href="#">Nunc dignissim risus consecu</a></li>
-                        <li><a href="#">Cras ornare tristiqu</a></li>
-                    </ul>
+                    @foreach (var w in Model.Deger3)
+                    {
+                        <ul>
+                            <li><a href="/Blog/BlogDetay/@w.ID">@w.Baslik</a></li>
+                        </ul>
+                    }
+
                 </div>
                 <div class="comments">
                     <h3>RECENT COMMENTS</h3>
