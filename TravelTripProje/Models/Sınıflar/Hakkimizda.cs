@@ -11,6 +11,6 @@ namespace TravelTripProje.Models.Sınıflar
         [Key]
         public int ID { get; set; }
         public string FotoUrl { get; set; }
-        public string Aciklama { get; set;}
+        public string Aciklama { get; set; }
     }
 }
